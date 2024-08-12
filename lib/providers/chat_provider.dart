@@ -283,10 +283,10 @@ class ChatProvider extends ChangeNotifier {
       final imageBytes = await Future.wait(imageFutures!);
       final prompt = TextPart(message);
       final imageParts = imageBytes
-          .map((bytes) => DataPart('image/jpg', Uint8List.fromList(bytes)))
+          .map((bytes) => DataPart('image/heic', Uint8List.fromList(bytes)))
           .toList();
 
-      return Content.model([prompt, ...imageParts]);
+      return Content.multi([prompt, ...imageParts]);
     }
   }
 

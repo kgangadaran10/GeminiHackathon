@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_application_1/model/message.dart';
+import 'package:flutter_application_1/widgets/preview_images_widget.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
 class MyMessageWidget extends StatelessWidget {
@@ -20,14 +21,22 @@ class MyMessageWidget extends StatelessWidget {
             maxWidth: MediaQuery.of(context).size.width * 0.7,
           ),
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.primary,
+            color: Theme.of(context).colorScheme.primaryContainer,
             borderRadius: BorderRadius.circular(18),
           ),
           padding: const EdgeInsets.all(15),
           margin: const EdgeInsets.only(bottom: 8),
-          child: MarkdownBody(
-            selectable: true,
-            data: message.message.toString(),
+          child: Column(
+            children: [
+              if (message.imagesUrl.isNotEmpty)
+                PreviewImagesWidget(
+                  message: message,
+                ),
+              MarkdownBody(
+                selectable: true,
+                data: message.message.toString(),
+              ),
+            ],
           )),
     );
   }
