@@ -3,4 +3,6 @@ class Constants {
   static const String journalBox = 'Journal';
   static const String userBox = 'User';
   static const String settingsBox = 'Settings';
+
+  static const String geminiDB = 'gemini.db';
 }
