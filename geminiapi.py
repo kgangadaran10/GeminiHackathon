@@ -14,7 +14,7 @@ model = genai.GenerativeModel('gemini-pro')
 #print(response.text)
 
 # Upload the file.
-audio_file = genai.upload_file(path='sample.mp3')
+audio_file = genai.upload_file(path='audio.mp3')
 
 # Initialize a Gemini model appropriate for your use case.
 model = genai.GenerativeModel(model_name="gemini-1.5-flash")
@@ -22,7 +22,7 @@ model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
 
 # Create the prompt.
-prompt = "Summarize the speech."
+prompt = "consider you are a receptionist to a therapist and this is the audio you receive. Now give initial counselling to the patient and calm and make him comfortable. then if its emergency then let the therapist know and ask him to call 911 if its life threat"
 
 # Pass the prompt and the audio file to Gemini.
 response = model.generate_content([prompt, audio_file])
