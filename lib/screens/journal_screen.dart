@@ -16,9 +16,8 @@ class _JournalScreenState extends State<JournalScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Chat History Screen'),
-      ),
-    );
+        body: Center(
+      child: Text('Journal Screen'),
+    ));
   }
 }
